@@ -4,10 +4,29 @@ var app = new Vue({
     albums: [],
   },
   mounted: function () {
-    axios.get("data.php").then((risposta) => {
-      console.log(risposta.data);
-      this.albums = risposta.data;
-      console.log(this.albums);
-    });
+    this.update();
+  },
+  methods: {
+    update() {
+      axios.get("data.php").then((risposta) => {
+        console.log(risposta.data);
+        this.albums = risposta.data;
+        console.log(this.albums);
+      });
+    },
+    selectedArt(artista) {
+      console.log(artista);
+      axios
+        .get("data.php", {
+          params: {
+            autore: artista,
+          },
+        })
+        .then((risposta) => {
+          console.log(risposta.data);
+          this.albums = risposta.data;
+          console.log(this.albums);
+        });
+    },
   },
 });

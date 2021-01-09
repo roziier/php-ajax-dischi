@@ -12,24 +12,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
 </head>
 <body>
-<!-- Header -->
-<header>
-  <div class="cont_header">
-    <img src="img/Spotify_Logo_RGB_Green.png" style="width:250px;height:75px">
-  </div>
-</header>
 
-<!-- Main  -->
-<main id="app">
-  <div class="cont_main">
-    <div class="box" v-for="album in albums">
-        <img :src="album.poster" class="poster">
-        <h1>{{album.title}}</h1>
-        <h3>{{album.author}}</h3>
-        <h3>{{album.year}}</h3>
-    </div>  
+  <div id="app">
+  <!-- Header -->
+    <header>
+      <div class="cont_header">
+        <img src="img/Spotify_Logo_RGB_Green.png" style="width:250px;height:75px">
+        <button v-for="album in albums" @click="selectedArt(album.author)">{{album.author}}</button>
+      </div>
+    </header>
+
+    <!-- Main  -->
+    <main>
+      <div class="cont_main">
+        <div class="box" v-for="album in albums">
+            <img :src="album.poster" class="poster">
+            <h1>{{album.title}}</h1>
+            <h3>{{album.author}}</h3>
+            <h3>{{album.year}}</h3>
+        </div>  
+      </div>
+    </main>
   </div>
-</main>
 
     <script src="script.js"></script>
 </body>

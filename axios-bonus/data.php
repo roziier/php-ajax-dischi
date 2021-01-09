@@ -40,14 +40,22 @@ header('Content-type: application/json');
         
     ];
 
-    $author = $_GET['author'];
+    
+
+    $autore = $_GET['autore'];
     $new = [];
-    for ($i=0; $i < count($database); $i++) { 
-       $autore = $database[$i];
-       if ($author === $autore['author']) {
-          $new[] = $database[$i];
-       } else {
-        $new[] = $database;
-       }
-    }
-    echo json_encode($database);
+    for ($x=0; $x < count($database); $x++) {
+        $disco = $database[$x];
+    
+        if ($autore == null || $autore === "All" ) {
+          $new = $database;
+        } elseif ($disco["author"] === $autore) {
+          $new[] = $disco;
+        }
+      }
+    
+      echo json_encode($new);
+    
+    
+    
+    
