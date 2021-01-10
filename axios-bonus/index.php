@@ -18,7 +18,7 @@
     <header>
       <div class="cont_header">
         <img src="img/Spotify_Logo_RGB_Green.png" style="width:250px;height:75px">
-        <button v-for="album in albums" @click="selectedArt(album.author)">{{album.author}}</button>
+        <button v-for="btns in buttons" @click="selectedArt(btns.author)">{{btns.author}}</button>
       </div>
     </header>
 

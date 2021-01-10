@@ -2,6 +2,7 @@ var app = new Vue({
   el: "#app",
   data: {
     albums: [],
+    buttons: [],
   },
   mounted: function () {
     this.update();
@@ -9,9 +10,8 @@ var app = new Vue({
   methods: {
     update() {
       axios.get("data.php").then((risposta) => {
-        console.log(risposta.data);
         this.albums = risposta.data;
-        console.log(this.albums);
+        this.buttons = risposta.data;
       });
     },
     selectedArt(artista) {
