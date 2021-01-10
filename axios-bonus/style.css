@@ -55,3 +55,17 @@ h3 {
   width: 180px;
   height: 180px;
 }
+
+button {
+  color: aliceblue;
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid white;
+  outline: none;
+}
+
+button:hover {
+  background-color: lavender;
+  color: blue;
+}

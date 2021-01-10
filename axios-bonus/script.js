@@ -28,5 +28,11 @@ var app = new Vue({
           console.log(this.albums);
         });
     },
+    showAll() {
+      axios.get("data.php").then((risposta) => {
+        this.albums = risposta.data;
+        this.buttons = risposta.data;
+      });
+    },
   },
 });
