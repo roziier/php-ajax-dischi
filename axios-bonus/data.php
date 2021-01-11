@@ -43,11 +43,12 @@ header('Content-type: application/json');
     
 
     $autore = $_GET['autore'];
+    
     $new = [];
     for ($x=0; $x < count($database); $x++) {
         $disco = $database[$x];
     
-        if ($autore == null || $autore === "All" ) {
+        if ($autore == null) {
           $new = $database;
         } elseif ($disco["author"] === $autore) {
           $new[] = $disco;
